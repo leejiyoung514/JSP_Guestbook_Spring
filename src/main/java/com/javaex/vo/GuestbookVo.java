@@ -1,6 +1,6 @@
 package com.javaex.vo;
 
-public class GuestbookVO {
+public class GuestbookVo {
 
 	private int no;
 	private String name;
@@ -9,17 +9,17 @@ public class GuestbookVO {
 	private String req_date;
 	
 
-	public GuestbookVO() {
+	public GuestbookVo() {
 	
 	}
 
-	public GuestbookVO(String name, String password, String content) {
+	public GuestbookVo(String name, String password, String content) {
 		this.name = name;
 		this.password = password;
 		this.content = content;
 	}
 
-	public GuestbookVO(int no, String name, String password, String content, String req_date) {
+	public GuestbookVo(int no, String name, String password, String content, String req_date) {
 		this.no = no;
 		this.name = name;
 		this.password = password;

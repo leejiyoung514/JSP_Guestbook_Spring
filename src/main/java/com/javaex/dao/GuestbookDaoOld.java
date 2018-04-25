@@ -10,13 +10,14 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.javaex.vo.GuestbookVO;
+import com.javaex.vo.GuestbookVo;
 
 @Repository
-public class GuestbookDAO {
-
+public class GuestbookDaoOld {
+	
+	
     //삽입기능
-	public void insert(GuestbookVO vo) {
+	public void insert(GuestbookVo vo) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int count;
@@ -52,12 +53,12 @@ public class GuestbookDAO {
 	}
 
 	//방명록 글 가져오기
-	public List<GuestbookVO> getlist() {
+	public List<GuestbookVo> getlist() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		List<GuestbookVO> list = new ArrayList<GuestbookVO>();
+		List<GuestbookVo> list = new ArrayList<GuestbookVo>();
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -72,7 +73,7 @@ public class GuestbookDAO {
 				String password = rs.getString("PASSWORD");
 				String content = rs.getString("CONTENT");
 				String req_date = rs.getString("REG_DATE");
-				GuestbookVO vo = new GuestbookVO(no, name, password, content, req_date);
+				GuestbookVo vo = new GuestbookVo(no, name, password, content, req_date);
 				list.add(vo);
 			}
 
